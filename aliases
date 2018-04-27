@@ -1,0 +1,9 @@
+# Better defaults
+alias ls="ls -a --color=always"
+
+# Abbreviations
+alias g="git"
+
+# Less ambiguity
+alias python=python3
+

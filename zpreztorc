@@ -118,6 +118,9 @@ zstyle ':prezto:module:editor' key-bindings 'vi'
 # zstyle ':prezto:module:prompt' theme 'powerlevel9k'
 zstyle ':prezto:module:prompt' theme 'pure'
 
+PURE_GIT_DOWN_ARROW=↴
+PURE_GIT_UP_ARROW=↱
+
 # Set the working directory prompt display length.
 # By default, it is set to 'short'. Set it to 'long' (without '~' expansion)
 # for longer or 'full' (with '~' expansion) for even longer prompt display.

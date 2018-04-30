@@ -21,7 +21,11 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 " Now call :PlugInstall in Vim
 
+" Basics
 syntax on
+set number
+
+" Looks and colors
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 if (has("termguicolors"))

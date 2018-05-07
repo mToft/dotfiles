@@ -26,6 +26,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 #fi
 
 zplug load
+source ~/.zshenv
 
 # Load other files
 # Personal settings

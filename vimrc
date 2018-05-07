@@ -8,7 +8,8 @@ endif
 " Vim-plug installs plugins in this folder:
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
-Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'mhartington/oceanic-next'
@@ -44,7 +45,7 @@ nnoremap k gk
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
 if (has("termguicolors"))
-        "  set termguicolors
+"          set termguicolors
 endif
 " set t_Co=256
 
@@ -53,10 +54,14 @@ endif
 colorscheme OceanicNext
 
 " Vim-airline config:
-let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
-let g:airline_skip_empty_sections = 1
+" let g:airline_powerline_fonts = 1
+" let g:airline_theme='oceanicnext'
+" let g:airline_skip_empty_sections = 1
 " let g:airline_left_sep = ''
 " let g:airline_left_alt_sep = ''
 " let g:airline_right_sep = ''
 " let g:airline_right_alt_sep = ''
+set laststatus=2
+let g:lightline = {
+  \ 'colorscheme': 'oceanicnext',
+  \ }

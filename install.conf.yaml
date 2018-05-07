@@ -5,7 +5,6 @@
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
     ~/.zshenv: zshenv
-    ~/.zpreztorc: zpreztorc
     ~/.zprofile: zprofile
     ~/.zlogin: zlogin
     ~/.zlogout: zlogout

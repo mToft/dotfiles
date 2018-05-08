@@ -8,6 +8,7 @@ endif
 " Vim-plug installs plugins in this folder:
 call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vim-polyglot'
+Plug 'tpope/vim-commentary'
 " Plug 'vim-airline/vim-airline'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'

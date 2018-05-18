@@ -5,14 +5,18 @@ if [[ ! -d ~/.zplug ]]; then
   source ~/.zplug/init.zsh && zplug update --self
 fi
 
-# Essential
 source ~/.zplug/init.zsh
 
 # zplug "zplug/zplug", hook-build:'zplug --self-manage'
 # zplug "zsh-users/zsh-syntax-highlighting"
-zplug mafredri/zsh-async, from:github
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zsh-users/zsh-completions"
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# zplug "zsh-users/zsh-autosuggestions", hook-load:"source ~/.config/zsh_plugins/zsh-autosuggestions.zsh"
+zplug "modules/history", from:prezto
+zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+
 # zplug "zsh-users/zsh-history-substring-search"
 
 # Install packages that have not been installed yet
@@ -28,6 +32,9 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug load
 source ~/.zshenv
 
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' separate-sections 'yes'
 # Load other files
 # Personal settings
 if [ -e ~/.secrets ]; then
@@ -45,3 +52,6 @@ zstyle ':completion:*' list-colors "${(@s.:.)LS_COLORS}"
 autoload -Uz compinit
 
 #zprof
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+

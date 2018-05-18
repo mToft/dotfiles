@@ -14,6 +14,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'mhartington/oceanic-next'
+Plug 'mbbill/undotree'
 call plug#end()
 " Now call :PlugInstall in Vim
 

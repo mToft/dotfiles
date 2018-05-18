@@ -1,5 +1,5 @@
 # Better defaults
-alias ls="ls -a --color=always"
+alias ls="ls -a --color=auto"
 
 # Abbreviations
 alias g="git"

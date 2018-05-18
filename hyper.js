@@ -4,8 +4,8 @@
 
 module.exports = {
   config: {
-    // Choose either "stable" for receiving highly polished,
-    // or "canary" for less polished but more frequent updates
+    // choose either `'stable'` for receiving highly polished,
+    // or `'canary'` for less polished but more frequent updates
     updateChannel: 'canary',
 
     // default font size in pixels for all tabs
@@ -14,81 +14,99 @@ module.exports = {
     // font family with optional fallbacks
     fontFamily: '"FuraCode NF", "Inconsolata NF", Menlo, "DejaVu Sans Mono", Consolas, "Lucida Console", monospace',
 
-    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
-    cursorColor: 'rgba(248,28,229,0.8)',
+    // default font weight: 'normal' or 'bold'
+    fontWeight: 'normal',
 
-    // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+    // font weight for bold characters: 'normal' or 'bold'
+    fontWeightBold: 'bold',
+
+    // line height as a relative unit
+    lineHeight: 0.95,
+
+    // terminal cursor background color and opacity (hex, rgb, hsl, hsv, hwb or cmyk)
+    //cursorColor: 'rgba(248,28,229,0.8)',
+    cursorColor: '#C0C5CE',
+
+    // terminal text color under BLOCK cursor
+    cursorAccentColor: '#1B2B34',
+
+    // `'BEAM'` for |, `'UNDERLINE'` for _, `'BLOCK'` for █
     cursorShape: 'BLOCK',
 
-    // set to true for blinking cursor
+    // set to `true` (without backticks and without quotes) for blinking cursor
     cursorBlink: false,
 
     // color of the text
-    foregroundColor: '#fff',
+    foregroundColor: '#C0C5CE',
 
     // terminal background color
-    backgroundColor: '#000',
+    // opacity is only supported on macOS
+    backgroundColor: '#1B2B34',
+
+    // terminal selection color
+    selectionColor: 'rgba(79,91,102,0.5)',
+    //selectionColor: '#4F5B66',
 
     // border color (window, tabs)
-    borderColor: '#333',
+    borderColor: '#3A3A3A',
 
-    // custom css to embed in the main window
+    // custom CSS to embed in the main window
     css: '',
 
-    // custom css to embed in the terminal window
+    // custom CSS to embed in the terminal window
     termCSS: '',
 
-    // set to `true` (without backticks) if you're using a Linux setup that doesn't show native menus
-    // default: `false` on Linux, `true` on Windows (ignored on macOS)
+    // if you're using a Linux setup which show native menus, set to false
+    // default: `true` on Linux, `true` on Windows, ignored on macOS
     showHamburgerMenu: '',
 
-    // set to `false` if you want to hide the minimize, maximize and close buttons
+    // set to `false` (without backticks and without quotes) if you want to hide the minimize, maximize and close buttons
     // additionally, set to `'left'` if you want them on the left, like in Ubuntu
-    // default: `true` on windows and Linux (ignored on macOS)
+    // default: `true` (without backticks and without quotes) on Windows and Linux, ignored on macOS
     showWindowControls: '',
 
-    // custom padding (css format, i.e.: `top right bottom left`)
+    // custom padding (CSS format, i.e.: `top right bottom left`)
     padding: '12px 14px',
 
     // the full list. if you're going to provide the full color palette,
     // including the 6 x 6 color cubes and the grayscale map, just provide
     // an array here instead of a color map object
-    colors: {
-      black: '#000000',
-      red: '#ff0000',
-      green: '#33ff00',
-      yellow: '#ffff00',
-      blue: '#0066ff',
-      magenta: '#cc00ff',
-      cyan: '#00ffff',
-      white: '#d0d0d0',
-      lightBlack: '#808080',
-      lightRed: '#ff0000',
-      lightGreen: '#33ff00',
-      lightYellow: '#ffff00',
-      lightBlue: '#0066ff',
-      lightMagenta: '#cc00ff',
-      lightCyan: '#00ffff',
-      lightWhite: '#ffffff'
+    colors: { // Oceanic Next colors
+      black: '#1B2B34',
+      red: '#EC5F67',
+      green: '#99C794',
+      yellow: '#FAC863',
+      blue: '#6699CC',
+      magenta: '#C594C5',
+      cyan: '#5FB3B3',
+      white: '#C0C5CE',
+      lightBlack: '#65737E',
+      lightRed: '#EC5F67',
+      lightGreen: '#99C794',
+      lightYellow: '#FAC863',
+      lightBlue: '#6699CC',
+      lightMagenta: '#C594C5',
+      lightCyan: '#5FB3B3',
+      lightWhite: '#D8DEE9',
     },
-
-    MaterialTheme: {
-        // Set the theme variant,
-        // OPTIONS: 'Darker', 'Palenight', ''
-        theme: 'Darker',
-
-        // [Optional] Set the rgba() app background opacity, useful when enableVibrance is true
-        // OPTIONS: From 0.1 to 1
-        //backgroundOpacity: '1',
-
-        // [Optional] Set the accent color for the current active tab
-        //accentColor: '#64FFDA',
-
-        // [Optional] Mac Only. Need restart. Enable the vibrance and blurred background
-        // OPTIONS: 'dark', 'ultra-dark', 'bright'
-        // NOTE: The backgroundOpacity should be between 0.1 and 0.9 to see the effect.
-        //vibrancy: 'dark'
-    },
+    // colors: {
+      // black: '#000000',
+      // red: '#C51E14',
+      // green: '#1DC121',
+      // yellow: '#C7C329',
+      // blue: '#0A2FC4',
+      // magenta: '#C839C5',
+      // cyan: '#20C5C6',
+      // white: '#C7C7C7',
+      // lightBlack: '#686868',
+      // lightRed: '#FD6F6B',
+      // lightGreen: '#67F86F',
+      // lightYellow: '#FFFA72',
+      // lightBlue: '#6A76FB',
+      // lightMagenta: '#FD7CFC',
+      // lightCyan: '#68FDFE',
+      // lightWhite: '#FFFFFF',
+    // },
 
     // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
     // if left empty, your system's login shell will be used by default
@@ -100,30 +118,33 @@ module.exports = {
     // Bash on Windows
     // - Example: `C:\\Windows\\System32\\bash.exe`
     //
-    // Powershell on Windows
+    // PowerShell on Windows
     // - Example: `C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe`
     shell: 'C:\\Windows\\System32\\bash.exe',
 
-    // for setting shell arguments (i.e. for using interactive shellArgs: ['-i'])
-    // by default ['--login'] will be used
+    // for setting shell arguments (i.e. for using interactive shellArgs: `['-i']`)
+    // by default `['--login']` will be used
     shellArgs: ['--login'],
 
     // for environment variables
     env: {},
 
-    // set to false for no bell
-    bell: 'SOUND',
+    // set to `false` for no bell
+    bell: 'false',
 
-    // if true, selected text will automatically be copied to the clipboard
-    copyOnSelect: false
+    // if `true` (without backticks and without quotes), selected text will automatically be copied to the clipboard
+    copyOnSelect: false,
 
-    // if true, on right click selected text will be copied or pasted if no
-    // selection is present (true by default on Windows)
-    // quickEdit: true
+    // if `true` (without backticks and without quotes), hyper will be set as the default protocol client for SSH
+    defaultSSHApp: true,
+
+    // if `true` (without backticks and without quotes), on right click selected text will be copied or pasted if no
+    // selection is present (`true` by default on Windows and disables the context menu feature)
+    // quickEdit: true,
 
     // URL to custom bell
     // bellSoundURL: 'http://example.com/bell.mp3',
-
+    
     // for advanced config flags please refer to https://hyper.is/#cfg
   },
 
@@ -133,13 +154,7 @@ module.exports = {
   //   `hyperpower`
   //   `@company/project`
   //   `project#1.0.1`
-  plugins: ["hyperterm-oceanic-next", "hypergravity", "hyper-tabs-enhanced"],
-  // "hyper-material-theme", <-- never use, has black problems. 
-  // 'hyperterm-atom-dark',
-  // hyper-solarized-dark,
-  // hyper-clean,
-  // hyperterm-spacegray
-  // "hyperterm-oceanic-next"
+  plugins: ["hyper-tabs-enhanced"],
 
   // in development, you can create a directory under
   // `~/.hyper_plugins/local/` and include it here
@@ -149,5 +164,5 @@ module.exports = {
   keymaps: {
     // Example
     // 'window:devtools': 'cmd+alt+o',
-  }
+  },
 };

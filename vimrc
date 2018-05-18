@@ -43,8 +43,8 @@ nnoremap j gj
 nnoremap k gk
 
 " Looks and colors
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
+" let g:oceanic_next_terminal_bold = 1
+" let g:oceanic_next_terminal_italic = 1
 if (has("termguicolors"))
 "          set termguicolors
 endif
@@ -64,5 +64,5 @@ colorscheme OceanicNext
 " let g:airline_right_alt_sep = ''
 set laststatus=2
 let g:lightline = {
-  \ 'colorscheme': 'oceanicnext',
+  \ 'colorscheme': 'one',
   \ }

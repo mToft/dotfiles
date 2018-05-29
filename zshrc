@@ -6,28 +6,27 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 source ~/.zplug/init.zsh
+if grep -q Microsoft /proc/version; then
+    unsetopt BG_NICE # Do not attempt to use "nice" if on WSL (it's unsupported)
+fi
 
 # zplug "zplug/zplug", hook-build:'zplug --self-manage'
-# zplug "zsh-users/zsh-syntax-highlighting"
 zplug "zsh-users/zsh-completions"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# zplug "zsh-users/zsh-autosuggestions", hook-load:"source ~/.config/zsh_plugins/zsh-autosuggestions.zsh"
 zplug "modules/history", from:prezto
 zplug "mafredri/zsh-async", from:github
 zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
-# zplug "zsh-users/zsh-history-substring-search"
-
 # Install packages that have not been installed yet
-#if ! zplug check --verbose; then
-#  printf "Install? [y/N]: "
-#  if read -q; then
-#    echo; zplug install
-#  else
-#    echo
-#  fi
-#fi
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  else
+    echo
+  fi
+fi
 
 zplug load
 source ~/.zshenv

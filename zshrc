@@ -6,8 +6,10 @@ if [[ ! -d ~/.zplug ]]; then
 fi
 
 source ~/.zplug/init.zsh
-if grep -q Microsoft /proc/version; then
-    unsetopt BG_NICE # Do not attempt to use "nice" if on WSL (it's unsupported)
+if [ -e /proc/version ]; then
+    if grep -q Microsoft /proc/version; then
+        unsetopt BG_NICE # Do not attempt to use "nice" if on WSL (it's unsupported)
+    fi
 fi
 
 # zplug "zplug/zplug", hook-build:'zplug --self-manage'

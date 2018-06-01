@@ -1,8 +1,10 @@
 # Better defaults
 alias ls="ls -a --color=auto"
+alias less="less -R"
 
 # Abbreviations
 alias g="git"
+alias e="vim"
 
 # Less ambiguity
 alias python=python3

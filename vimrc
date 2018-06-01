@@ -43,17 +43,28 @@ set hlsearch            " highlight matches
 nnoremap j gj
 nnoremap k gk
 
+" Easier split window navigation with Ctrl+hjkl
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+map <C-H> <C-W>h
+map <C-L> <C-W>l
+" Cycle between split windows with Ctrl+c
+map <C-c> <C-w>w
+" Set split behavior to create the new window below/right
+set splitbelow
+set splitright
+
 " Looks and colors
-" let g:oceanic_next_terminal_bold = 1
-" let g:oceanic_next_terminal_italic = 1
 if (has("termguicolors"))
-"          set termguicolors
+          " set termguicolors
 endif
-" set t_Co=256
+set t_Co=256
 
 " set background=dark
 " set termguicolors
 colorscheme OceanicNext
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
 
 " Vim-airline config:
 " let g:airline_powerline_fonts = 1

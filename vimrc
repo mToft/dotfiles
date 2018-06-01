@@ -14,6 +14,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
 Plug 'mhartington/oceanic-next'
 Plug 'mbbill/undotree'
+Plug 'itchyny/vim-cursorword'
 call plug#end()
 " Now call :PlugInstall in Vim
 

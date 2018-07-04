@@ -31,20 +31,22 @@ if ! zplug check --verbose; then
 fi
 
 zplug load
+
+# Load other files
+
 source ~/.zshenv
 
-zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
-zstyle ':completion:*' menu select
-zstyle ':completion:*' separate-sections 'yes'
-# Load other files
-# Personal settings
-if [ -e ~/.secrets ]; then
-  source ~/.secrets/zsh_env
+if [ -e ~/.dotfileslocal ]; then
+  source ~/.dotfileslocal/.zshenv
 fi
 
 if [ -e ~/.aliases ]; then
   source ~/.aliases
 fi
+
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}'
+zstyle ':completion:*' menu select
+zstyle ':completion:*' separate-sections 'yes'
 
 #Change ls colours
 LS_COLORS="ow=01;36;40" && export LS_COLORS

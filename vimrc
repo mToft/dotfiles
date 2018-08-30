@@ -12,9 +12,13 @@ Plug 'tpope/vim-commentary'
 Plug 'itchyny/lightline.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-fugitive'
+Plug 'vimwiki/vimwiki'
+Plug 'tbabej/taskwiki'
 Plug 'mhartington/oceanic-next'
 Plug 'mbbill/undotree'
 Plug 'itchyny/vim-cursorword'
+Plug 'tpope/vim-sleuth'
+Plug 'kopischke/vim-stay'
 call plug#end()
 " Now call :PlugInstall in Vim
 
@@ -38,6 +42,8 @@ set showmatch
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
+let mapleader=' '
+
 " Movement
 " move vertically by visual line:
 nnoremap j gj
@@ -56,7 +62,7 @@ set splitright
 
 " Looks and colors
 if (has("termguicolors"))
-          " set termguicolors
+  set termguicolors
 endif
 set t_Co=256
 
@@ -78,3 +84,8 @@ set laststatus=2
 let g:lightline = {
   \ 'colorscheme': 'one',
   \ }
+
+let g:vimwiki_list = [
+                        \{'path': '~/Nextcloud/Documents/vimwiki/'}
+                    \]
+au BufRead,BufNewFile *.wiki set filetype=vimwiki

@@ -34,6 +34,9 @@ zplug load
 
 # Load other files
 
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
 source ~/.zshenv
 
 if [ -e ~/.dotfileslocal ]; then
@@ -56,6 +59,4 @@ autoload -Uz compinit
 
 # zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # case-insensitive matching
 #zprof
-export LC_ALL=en_US.UTF-8
-export LANG=en_US.UTF-8
 

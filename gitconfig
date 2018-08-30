@@ -1,7 +1,13 @@
 [user]
-	email = mToft@users.noreply.github.com
-	name = Michael
+       email = mToft@users.noreply.github.com
+       name = Michael
+[color]
+    ui = auto
 [push]
 	default = simple
 [pull]
     rebase = true
+[core]
+    editor = vim
+[include]
+    path = ~/.dotfileslocal/.gitconfig
